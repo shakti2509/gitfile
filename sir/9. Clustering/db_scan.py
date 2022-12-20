@@ -3,8 +3,6 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score
-import os
-os.chdir(r'C:\adv analytics\sir\Datasets')
 
 milk = pd.read_csv("milk.csv",index_col=0)
 
@@ -12,12 +10,12 @@ milk = pd.read_csv("milk.csv",index_col=0)
 scaler = StandardScaler()
 milkscaled=scaler.fit_transform(milk)
 
-clust_DB = DBSCAN(eps=0.4, min_samples=3)
-clust_DB.fit(milkscaled)
-print(clust_DB.labels_)
+# clust_DB = DBSCAN(eps=4, min_samples=3)
+# clust_DB.fit(milkscaled)
+# print(clust_DB.labels_)
 
-eps_range = [0.1,0.2,0.3,0.4,0.6,1]
-mp_range = [2,3,4,5]
+eps_range = [0.1, 0.2, 0.3, 0.4, 0.6, 1]
+mp_range = [2, 3, 4, 5]
 cnt = 0
 a =[]
 for i in eps_range:
@@ -33,4 +31,14 @@ for i in eps_range:
 a = np.array(a)
 pa = pd.DataFrame(a,columns=['Sr','eps','min_pt','sil'])
 print("Best Paramters:")
-pa[pa['sil'] == pa['sil'].max()]
+max_score =       
+pa[pa['sil'] == max_score]
+
+
+
+
+
+
+
+
+
